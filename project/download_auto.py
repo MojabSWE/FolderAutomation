@@ -5,7 +5,8 @@ import os
 import time
 
 watched_directory = "//Users/mojabjamal/Downloads"
-NEW_DIR = "gifs"
+NEW_DIR = "docs"
+
 
 
 class MyDownloadHandler(FileSystemEventHandler):
@@ -17,7 +18,7 @@ class MyDownloadHandler(FileSystemEventHandler):
             if not os.path.exists(new_dest_directory):
                 os.mkdir(new_dest_directory)
 
-            if file_name.endswith(".gif"):
+            if file_name.endswith(".docx"):
                 os.rename(watched_file, f"{new_dest_directory}/{file_name}")
 
 if __name__ == "__main__":
