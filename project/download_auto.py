@@ -9,6 +9,8 @@ NEW_DIR = "docs"
 
 
 
+
+
 class MyDownloadHandler(FileSystemEventHandler):
     def on_modified(self, event):
         for file_name in os.listdir(watched_directory):
@@ -20,6 +22,10 @@ class MyDownloadHandler(FileSystemEventHandler):
 
             if file_name.endswith(".docx"):
                 os.rename(watched_file, f"{new_dest_directory}/{file_name}")
+
+             
+            
+            
 
 if __name__ == "__main__":
     event_handler = MyDownloadHandler()
